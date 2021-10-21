@@ -76,20 +76,20 @@ void IRAM_ATTR Pulse2MeterSensor::gpio_intr(Pulse2MeterSensor *sensor) {
     return;
   }
 
-  if( flipflop == false && pa )
+  if( sensor->flipflop == false && pa )
   {
-    flipflop = true;
+    sensor->flipflop = true;
     return;
   } 
 
-  if( flipflop == true && !pb )
+  if( sensor->flipflop == true && !pb )
   {
     return;  
   }
   
-  if( flipflop && pb )
+  if( sensor->flipflop && pb )
   {
-    flipflop = false;
+    sensor->flipflop = false;
     // continue to the actual counting
   }
 
