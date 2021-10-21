@@ -58,8 +58,8 @@ CONFIG_SCHEMA = sensor.sensor_schema(
 ).extend(
     {
         cv.GenerateID(): cv.declare_id(Pulse2MeterSensor),
-        cv.Required(CONF_PIN_A): validate_pulse_meter_pin,
-        cv.Required(CONF_PIN_B): validate_pulse_meter_pin,
+        cv.Required(CONF_PIN_A): validate_pulse2_meter_pin,
+        cv.Required(CONF_PIN_B): validate_pulse2_meter_pin,
         cv.Optional(CONF_INTERNAL_FILTER, default="13us"): validate_internal_filter,
         cv.Optional(CONF_TIMEOUT, default="5min"): validate_timeout,
         cv.Optional(CONF_TOTAL): sensor.sensor_schema(
