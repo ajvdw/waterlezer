@@ -34,5 +34,4 @@ void loop(void)
   if( sens1 && sens2 ) analogWrite(ledPin, 255 );
   if( !sens1 && !sens2 ) analogWrite(ledPin, 0 );
   if( sens1 != sens2 ) analogWrite(ledPin, 230 );
-
 }
