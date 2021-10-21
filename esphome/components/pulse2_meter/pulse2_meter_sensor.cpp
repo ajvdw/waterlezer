@@ -9,11 +9,11 @@ static const char *const TAG = "pulse2_meter";
 void Pulse2MeterSensor::setup() {
   this->pin_a_->setup();
   this->isr_pin_a_ = pin_a_->to_isr();
-  this->pin_a_-->attach_interrupt(Pulse2MeterSensor::gpio_intr, this, gpio::INTERRUPT_ANY_EDGE);
+  this->pin_a_->attach_interrupt(Pulse2MeterSensor::gpio_intr, this, gpio::INTERRUPT_ANY_EDGE);
  
   this->pin_b_->setup();
   this->isr_pin_b_ = pin_b_->to_isr();
-  this->pin_b_-->attach_interrupt(Pulse2MeterSensor::gpio_intr, this, gpio::INTERRUPT_ANY_EDGE);
+  this->pin_b_->attach_interrupt(Pulse2MeterSensor::gpio_intr, this, gpio::INTERRUPT_ANY_EDGE);
 
   this->last_detected_edge_us_ = 0;
   this->last_valid_edge_us_ = 0;
@@ -44,14 +44,14 @@ void Pulse2MeterSensor::loop() {
   }
 
   if (this->total_sensor_ != nullptr) {
-    const uint32_t total = this->total_pulse2s_;
+    const uint32_t total = this->total_pulses_;
     if (this->total_dedupe_.next(total)) {
       this->total_sensor_->publish_state(total);
     }
   }
 }
 
-void Pulse2MeterSensor::set_total_pulse2s(uint32_t pulse2s) { this->total_pulse2s_ = pulse2s; }
+void Pulse2MeterSensor::set_total_pulses(uint32_t pulses) { this->total_pulses_ = pulses; }
 
 void Pulse2MeterSensor::dump_config() {
   LOG_SENSOR("", "Pulse2 Meter", this);
@@ -66,32 +66,30 @@ void IRAM_ATTR Pulse2MeterSensor::gpio_intr(Pulse2MeterSensor *sensor) {
 
   // Get the current time before we do anything else so the measurements are consistent
   const uint32_t now = micros();
-
+  static bool flipflop=false; 
 
   const bool pa= sensor->isr_pin_a_.digital_read();
   const bool pb= sensor->isr_pin_b_.digital_read();
 
   // We only look at rising edges
-  if (!pa && !pb ) {
+  if (pa != pb ) {
     return;
   }
 
-  if( sensor->flipflop == false && pa )
+  if( !flipflop && pa )
   {
-    sensor->flipflop = true;
+    flipflop = true;
     return;
   } 
 
-  if( sensor->flipflop == true && !pb )
-  {
-    return;  
-  }
   
-  if( sensor->flipflop && pb )
+  if( flipflop && pb )
   {
-    sensor->flipflop = false;
+    flipflop = false;
     // continue to the actual counting
   }
+  else return; 
+
 
   // Check to see if we should filter this edge out
   if ((now - sensor->last_detected_edge_us_) >= sensor->filter_us_) {
@@ -100,7 +98,7 @@ void IRAM_ATTR Pulse2MeterSensor::gpio_intr(Pulse2MeterSensor *sensor) {
       sensor->pulse2_width_us_ = (now - sensor->last_valid_edge_us_);
     }
 
-    sensor->total_pulse2s_++;
+    sensor->total_pulses_++;
     sensor->last_valid_edge_us_ = now;
   }
 

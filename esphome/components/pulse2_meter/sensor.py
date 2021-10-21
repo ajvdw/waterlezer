@@ -90,7 +90,7 @@ async def to_code(config):
 
 
 @automation.register_action(
-    "pulse_meter.set_total_pulses",
+    "pulse2_meter.set_total_pulses",
     SetTotalPulsesAction,
     cv.Schema(
         {

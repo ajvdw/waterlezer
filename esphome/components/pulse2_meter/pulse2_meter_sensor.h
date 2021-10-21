@@ -17,7 +17,7 @@ class Pulse2MeterSensor : public sensor::Sensor, public Component {
   void set_timeout_us(uint32_t timeout) { this->timeout_us_ = timeout; }
   void set_total_sensor(sensor::Sensor *sensor) { this->total_sensor_ = sensor; }
 
-  void set_total_pulse2s(uint32_t pulse2s);
+  void set_total_pulses(uint32_t pulses);
 
   void setup() override;
   void loop() override;
@@ -33,7 +33,6 @@ class Pulse2MeterSensor : public sensor::Sensor, public Component {
   ISRInternalGPIOPin isr_pin_a_;
   ISRInternalGPIOPin isr_pin_b_;
 
-  bool flipflop = false;
   uint32_t filter_us_ = 0;
   uint32_t timeout_us_ = 1000000UL * 60UL * 5UL;
   sensor::Sensor *total_sensor_ = nullptr;
@@ -44,7 +43,7 @@ class Pulse2MeterSensor : public sensor::Sensor, public Component {
   volatile uint32_t last_detected_edge_us_ = 0;
   volatile uint32_t last_valid_edge_us_ = 0;
   volatile uint32_t pulse2_width_us_ = 0;
-  volatile uint32_t total_pulse2s_ = 0;
+  volatile uint32_t total_pulses_ = 0;
 };
 
 }  // namespace pulse2_meter
