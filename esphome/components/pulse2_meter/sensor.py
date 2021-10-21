@@ -78,9 +78,9 @@ async def to_code(config):
     await sensor.register_sensor(var, config)
 
     pin_a = await cg.gpio_pin_expression(config[CONF_PIN_A])
-    cg.add(var.set_pin_a(pin))
+    cg.add(var.set_pin_a(pin_a))
     pin_b = await cg.gpio_pin_expression(config[CONF_PIN_B])
-    cg.add(var.set_pin_a(pin))
+    cg.add(var.set_pin_a(pin_b))
     cg.add(var.set_filter_us(config[CONF_INTERNAL_FILTER]))
     cg.add(var.set_timeout_us(config[CONF_TIMEOUT]))
 
