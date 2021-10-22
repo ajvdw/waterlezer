@@ -7853,7 +7853,7 @@ Source: http://www.bourns.com/data/global/PDFs/3223.PDF</description>
 <part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="POLAR" package3d_urn="urn:adsk.eagle:package:38087/1"/>
 <part name="R4" library="resistor" deviceset="R-EU_" device="0207/10" value="330"/>
 <part name="A1" library="RPR-220" deviceset="RPR-220" device=""/>
-<part name="IC1" library="SparkFun-IC-Amplifiers" library_urn="urn:adsk.eagle:library:520" deviceset="OPAMP-DUAL" device="" package3d_urn="urn:adsk.eagle:package:38666/1" technology="DIP" value="OP-AMP"/>
+<part name="IC1" library="SparkFun-IC-Amplifiers" library_urn="urn:adsk.eagle:library:520" deviceset="OPAMP-DUAL" device="" package3d_urn="urn:adsk.eagle:package:38666/1" technology="DIP" value="LMV358P"/>
 <part name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_04" device="POLAR" package3d_urn="urn:adsk.eagle:package:38087/1"/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
