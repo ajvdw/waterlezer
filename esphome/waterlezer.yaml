@@ -5,7 +5,6 @@ esphome:
 
 
 external_components:
-   #use from ESPHome's main branch in GitHub
  - source: "github://ajvdw/pulse2_meter@main"
    components: [ pulse2_meter ]
     
