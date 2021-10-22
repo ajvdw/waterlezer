@@ -35,8 +35,8 @@ module waterlezer_case_top()
             hull()
             {
                 translate([1.5,1.5,0]) cylinder( d=2.5, h=17 );
-                translate([57.5,1.5,0]) cylinder( d=2.5, h=17 );            
-                translate([57.5,37.5,0]) cylinder( d=2.5, h=17 );
+                translate([56.5,1.5,0]) cylinder( d=2.5, h=17 );            
+                translate([56.5,37.5,0]) cylinder( d=2.5, h=17 );
                 translate([1.5,37.5,0]) cylinder( d=2.5, h=17 );
             }
             translate([27.5,-2,0]) cylinder( d=10, h=17 );
@@ -44,15 +44,16 @@ module waterlezer_case_top()
            
         }
         // holes
-        translate( [5,3.5,1.2] ) cube( [52, 32, 20] );
-        translate( [2,2,11] ) cube( [55, 35, 20] );
+        translate( [5,3.5,1.2] ) cube( [50, 32, 20] );
+        translate( [2,2,11] ) cube( [54, 35, 20] );
         translate( [2,3.5,7.5] ) cube( [5.5, 32, 20] );
         
         translate( [7,2,7.5] ) cube( [46, 35, 20] );
         translate( [7,2,1.6] ) cube( [46, 35, 20] );
         
+        
         translate( [-0.5,13,5] ) cube( [3,13,20]);
-        translate( [56.5,13,6.5] ) cube( [3,13,20]);      
+        translate( [54.5,13,6.5] ) cube( [4,13,20]);      
         translate([27.5,-2,-0.5]) cylinder( d=5, h=20 ); 
         translate([27.5,41,-0.5]) cylinder( d=5, h=20 ); 
         translate([27.5,41,-0.5]) cylinder( d1=8, d2=5, h=3 ); 

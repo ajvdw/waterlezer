@@ -1,0 +1,46 @@
+esphome:
+  name: waterlezer
+  platform: ESP8266
+  board: d1_mini
+
+
+external_components:
+   #use from ESPHome's main branch in GitHub
+ - source: "github://ajvdw/pulse2_meter@main"
+   components: [ pulse2_meter ]
+    
+sensor: 
+  - platform: pulse2_meter
+    pin_a: D5
+    pin_b: D6
+    id: watermeter1
+    unit_of_measurement: 'l/min'
+    name: waterverbruik
+    icon: mdi:water
+    internal_filter: 13us
+    total:
+      unit_of_measurement: 'l'
+      name: 'watertotaal'
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+
+ota:
+  password: "????????????????"
+
+wifi:
+  ssid: "??????"
+  password: "??????????"
+
+
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Waterlezer Fallback Hotspot"
+    password: "??????????????"
+
+captive_portal:
