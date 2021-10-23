@@ -3,7 +3,7 @@
 /* Fits on a Sensus 620 Watermeter (Vitens)     */
 /* Works with WATERLEZER (ESPHOME)              */
 
-$fn=120;
+$fn=30;
 
 module sensus620mount_top()
 {
@@ -16,9 +16,9 @@ module sensus620mount_top()
             {
                 hull()
                 {
-                    translate([-17.4,-4.6,0]) cylinder(d=16, h=8);
-                    translate([17.4,-4.6,0]) cylinder(d=16, h=8);
-                    translate([3,20,0]) cylinder(d1=20, d2=10, h=8);
+                    translate([-17.4,-4.6,0]) cylinder(d2=14, d1=16, h=8);
+                    translate([17.4,-4.6,0]) cylinder(d2=14, d1=16, h=8);
+                    translate([0,0,0]) cylinder(d1=20, d2=15, h=8);
                     translate([2.5,-3,0]) cube([18,14,8],center=true);
                 }
            
@@ -54,7 +54,7 @@ module sensus620mount_bottom()
                 {
                     translate([-17.4,-4.6,0]) cylinder(d=16,h=3);
                     translate([17.4,-4.6,0]) cylinder(d=16,h=3);
-                    translate([3,20,0]) cylinder(d=20,h=3);
+                    translate([0,0,0]) cylinder(d=20,h=3);
                 }
           
                 translate([2.5,-1,3]) cube([13.4,10,7],center=true);
