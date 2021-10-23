@@ -16,11 +16,13 @@ sensor:
     id: watermeter1
     unit_of_measurement: 'l/min'
     name: waterverbruik
+    state_class: 'measurement'
     icon: mdi:water
     internal_filter: 13us
     total:
       unit_of_measurement: 'l'
       name: 'watertotaal'
+      state_class: total_increasing
 
 # Enable logging
 logger:
