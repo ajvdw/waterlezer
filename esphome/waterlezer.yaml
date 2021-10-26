@@ -1,12 +1,12 @@
 esphome:
-  name: waterlezer
+  name: watermeter
   platform: ESP8266
   board: d1_mini
 
-
 external_components:
- - source: "github://ajvdw/pulse2_meter@main"
-   components: [ pulse2_meter ]
+   #use from main branch in GitHub
+ - source: "github://ajvdw/pulse2_meter"
+   components: [pulse2_meter]
     
 sensor: 
   - platform: pulse2_meter
@@ -15,13 +15,17 @@ sensor:
     id: watermeter1
     unit_of_measurement: 'l/min'
     name: waterverbruik
-    state_class: 'measurement'
+    timeout: 2 min
     icon: mdi:water
-    internal_filter: 13us
+    internal_filter: 200ms
     total:
-      unit_of_measurement: 'l'
-      name: 'watertotaal'
-      state_class: total_increasing
+      unit_of_measurement: 'm³'
+      accuracy_decimals: 3
+      name: 'watertotal'
+      filters:
+      - offset: 3216868
+      - multiply: 0.001
+
 
 # Enable logging
 logger:
