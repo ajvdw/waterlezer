@@ -40,7 +40,10 @@ ota:
 wifi:
   ssid: "??????"
   password: "??????????"
-
+  manual_ip:
+    static_ip: vvv.xxx.yyy.zzz
+    gateway: vvv.xxx.yyy.aaa
+    subnet: 255.255.255.0  
 
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
