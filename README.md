@@ -15,7 +15,7 @@ Open a tap when you start calibrating. On the PCB there are two potentionmeters.
 Now slowly turn the left one to the right until the led starts flashing slowly on and off (no small flashes in between).
 Next slowly turn the right one to the left until the led starts alternating between off-half-on-half-off etc.
 
-The red line in the graph below shows the reflection of the turning wheel of the meter. Calibration should result in the blue line. 
+The blue line in the graph below shows the reflection of the turning wheel of the meter. Calibration should result in the red line. 
 ![reflection-graph](https://github.com/ajvdw/waterlezer/raw/main/media/reflection.png)
 
 Now you can configure the watermeter in homeassistant. The ESPHome addon should be installed. I have included a sample yaml file (https://github.com/ajvdw/waterlezer/blob/main/esphome/waterlezer.yaml).
