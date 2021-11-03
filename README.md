@@ -11,9 +11,10 @@ WaterLezer is powered by ESPHome. The code is opensource and can be found on my 
 Connect the mcu to power, it will behave like a wifi access point. Join the network with SSID Waterlezer. You will be forwarded to a webpage (http://192.168.4.1).
 On this page you can configure your home wifi settings. If configured correctly it will join your home network automatically. 
 Now you can connect the sensor to the mcu using the short cable and mount the sensor on top of the watermeter.
-Open a tap when you start calibrating. On the PCB there are two potentionmeters. Turn the left one all the way to the left and the right one to the right.
+Open a tap to let the water running when you start calibrating. 
+On the PCB there are two potentionmeters (blue). Turn the left one all the way to the left and the right one to the right.
 Now slowly turn the left one to the right until the led starts flashing slowly on and off (no small flashes in between).
-Next slowly turn the right one to the left until the led starts alternating between off-half-on-half-off etc.
+Next slowly turn the right one to the left until the led starts alternating between off-medium-on-medium-off etc.
 
 The blue line in the graph below shows the reflection of the turning wheel of the meter. Calibration should result in the red line. 
 ![reflection-graph](https://github.com/ajvdw/waterlezer/raw/main/media/reflection.png)
