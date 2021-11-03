@@ -8,4 +8,4 @@ The WaterLezer is designed to work with any home automation system but the curre
 WaterLezer is powered by ESPHome. The code is opensource and can be found on my GitHub page for waterlezer. Here you can find a default yaml file as it is used for the precompiled firmware.
 
 ### Installation
-![reflection-graph](http:s//./media/reflection.png)
+![reflection-graph](https://github.com/ajvdw/waterlezer/raw/main/media/reflection.png)
