@@ -18,7 +18,8 @@ Next slowly turn the right one to the left until the led starts alternating betw
 
 The blue line in the graph below shows the reflection of the turning wheel of the meter. Calibration should result in the red line. 
 ![reflection-graph](https://github.com/ajvdw/waterlezer/raw/main/media/reflection.png)
-The calibrated points are represented by an intersection between the vertical red lines and the blue curve.
+
+The calibrated points are represented by an intersection between the vertical red lines and the blue curve (Horizontal lines through the yellow stars).
 
 ### Configuration
 Now you can configure the watermeter in homeassistant. The ESPHome addon should be installed. I have included a sample yaml file (https://github.com/ajvdw/waterlezer/blob/main/esphome/waterlezer.yaml).
