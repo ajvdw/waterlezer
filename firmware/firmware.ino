@@ -19,7 +19,7 @@ void setup(void)
   WiFiManager wifiManager;
   
   // Uncomment and run it once, if you want to erase all the stored information
-  wifiManager.resetSettings();
+  //wifiManager.resetSettings();
   
   wifiManager.autoConnect("WaterLezer");
 
