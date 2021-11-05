@@ -14,7 +14,7 @@ sensor:
     pin_b: D6
     id: watermeter1
     unit_of_measurement: 'l/min'
-    name: waterverbruik
+    name: waterflow
     timeout: 2 min
     icon: mdi:water
     internal_filter: 200ms
