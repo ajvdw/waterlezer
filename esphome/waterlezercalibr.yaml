@@ -1,0 +1,62 @@
+esphome:
+  name: waterlezer
+  platform: ESP8266
+  board: d1_mini
+
+external_components:
+  #use from main branch in GitHub
+  - source: "github://ajvdw/pulse2_meter"
+    components: [pulse2_meter]
+
+output:
+  - platform: esp8266_pwm
+    pin: D4
+    frequency: 1000 Hz
+    id: blue_led1
+    
+sensor: 
+  - platform: pulse2_meter
+    pin_a: D5
+    pin_b: D6
+    id: watermeter2
+    unit_of_measurement: 'l/min'
+    name: waterverbruik
+    timeout: 2 min
+    icon: mdi:water
+    internal_filter: 200ms
+    calibration:
+      id: calibration1
+      on_value:
+        then:
+          - output.set_level:
+              id: blue_led1
+              level: !lambda "return 1.0-(0.125*x*x*x);"    
+    total:
+      unit_of_measurement: 'm³'
+      accuracy_decimals: 3
+      name: 'watertotal'
+      filters:
+      - offset: 3220345
+      - multiply: 0.001
+
+# Enable logging
+logger:
+
+ota:
+  password: "????????????????"
+
+wifi:
+  ssid: "??????"
+  password: "??????????"
+  manual_ip:
+    static_ip: vvv.xxx.yyy.zzz
+    gateway: vvv.xxx.yyy.aaa
+    subnet: 255.255.255.0  
+
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Waterlezer Fallback Hotspot"
+    password: "??????????????"
+
+captive_portal:
