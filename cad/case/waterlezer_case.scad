@@ -34,22 +34,26 @@ module waterlezer_case_top()
         {
             hull()
             {
-                translate([1.5,1.5,0]) cylinder( d=2.5, h=17 );
-                translate([56.5,1.5,0]) cylinder( d=2.5, h=17 );            
-                translate([56.5,37.5,0]) cylinder( d=2.5, h=17 );
-                translate([1.5,37.5,0]) cylinder( d=2.5, h=17 );
+                translate([1.5,1.5,0]) cylinder( d=2, h=17 );
+                translate([56.5,1.5,0]) cylinder( d=2, h=17 );            
+                translate([56.5,37.5,0]) cylinder( d=2, h=17 );
+                translate([1.5,37.5,0]) cylinder( d=2, h=17 );
             }
-            translate([27.5,-2,0]) cylinder( d=10, h=17 );
-            translate([27.5,41,0]) cylinder( d=10, h=17 );
+            translate([27.5,-2,0]) cylinder( d=9, h=17 );
+            translate([27.5,41,0]) cylinder( d=9, h=17 );
            
         }
         // holes
         translate( [5,3.5,1.2] ) cube( [50, 32, 20] );
         translate( [2,2,11] ) cube( [54, 35, 20] );
         translate( [2,3.5,7.5] ) cube( [5.5, 32, 20] );
+
+        translate( [2,3.5,1.2] ) cube( [5.5, 9.5, 20] );
+        translate( [2,26,1.2] ) cube( [5.5, 9.5, 20] );
         
         translate( [7,2,7.5] ) cube( [46, 35, 20] );
         translate( [7,2,1.6] ) cube( [46, 35, 20] );
+ 
         
         
         translate( [-0.5,13,5] ) cube( [3,13,20]);

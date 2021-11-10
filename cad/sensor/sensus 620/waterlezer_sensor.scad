@@ -17,9 +17,7 @@ module sensus620mount_top()
                 translate([-17.4,-4.6,0]) cylinder(d2=14, d1=16, h=8);
                 translate([17.4,-4.6,0]) cylinder(d2=14, d1=16, h=8);
                 translate([0,0,0]) cylinder(d1=20, d2=15, h=8);
-              //  translate([2.5,-3,0]) cube([18,14,8],center=true);
             }
-       
         }
         // Holes
         translate([2.5,-9.5,1.5]) cube([13.5,8,4.1], center=true);
