@@ -1,0 +1,6 @@
+utility_meter:
+  waterdaily:
+    source: sensor.waterlzr_total
+    cycle: daily
+  watertotal:
+    source: sensor.waterlzr_total
