@@ -57,7 +57,7 @@ module sensus620mount_bottom()
         hull()
         {
             translate([2.5,0,0]) cube([7,5.1,0.1], center=true);      
-            translate([2.4,0,7]) cube([6.7,5.3,0.1], center=true);
+            translate([2.5,0,7]) cube([7.8,6,0.1], center=true);
         }
         translate([2.5,-9.5,3.5]) cube([13.5,8,6.1], center=true);
         
