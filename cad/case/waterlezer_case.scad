@@ -18,13 +18,9 @@ module waterlezer_case_bottom()
         translate( [2,2.25,3] ) cube( [47, 30.5, 12] );
         translate( [2,2.25,4.5] ) cube( [50, 30.5, 12] );
         translate( [2,3.5,0.8] ) cube( [47, 28, 12] );
-        
-         translate( [2,5.5,0.8] ) cube( [49, 24, 12] );
-        
+        translate( [2,5.5,0.8] ) cube( [49, 24, 12] );
         translate( [-0.5,11,3] ) cube( [3,13,8]);
         translate( [51.5,11.5,3.5] ) cube( [3,12,9]);   
-    
-        
     }
 }
 
@@ -50,15 +46,10 @@ module waterlezer_case_top()
         translate( [5,3.5,1.2] ) cube( [50, 32, 20] );
         translate( [2,2,11] ) cube( [54, 35, 20] );
         translate( [2,3.5,7.5] ) cube( [5.5, 32, 20] );
-
         translate( [2,3.5,1.2] ) cube( [5.5, 9.5, 20] );
-        translate( [2,26,1.2] ) cube( [5.5, 9.5, 20] );
-        
+        translate( [2,26,1.2] ) cube( [5.5, 9.5, 20] );       
         translate( [7,2,7.5] ) cube( [46, 35, 20] );
         translate( [7,2,1.2] ) cube( [46, 35, 20] );
- 
-        
-        
         translate( [-0.5,13,5] ) cube( [3,13,20]);
         translate( [54.5,13,6.5] ) cube( [4,13,20]);      
         translate([27.5,-2,-0.5]) cylinder( d=5, h=20 ); 
