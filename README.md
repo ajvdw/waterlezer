@@ -7,6 +7,9 @@ The WaterLezer is designed to work with any home automation system but the curre
 ### ESPHome
 WaterLezer is powered by ESPHome. The code is opensource and can be found on my GitHub page for waterlezer. Here you can find a default yaml file as it is used for the precompiled firmware.
 
+### How does it work
+The waterlezer hardware is designed for detecting reflection from a metalic surface of a rotating wheel that is used for counting the number of liters of water flowing through the meter. It has an IR emitting LED and an IR sensitive phototransistor. It can output two digital signals to a microcontroller. Each signal can be set to a certain amount of reflection.  
+
 ### Installation
 Push the sensor on the watermeter. Connect the waterlezer with the mcu. Connect the mcu to power (using a micro usb cable and phone charger).
 Once powered-on it will behave like a wifi access point. Join the network with SSID Waterlezer. You will be forwarded to a webpage (http://192.168.4.1).
