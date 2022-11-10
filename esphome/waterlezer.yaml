@@ -34,6 +34,7 @@ sensor:
     total:
       unit_of_measurement: 'm³'
       accuracy_decimals: 3
+      device_class: 'water'
       name: waterlzr_total
       filters:
       - multiply: 0.001
